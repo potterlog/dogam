@@ -122,6 +122,16 @@ function render() {
   root.querySelectorAll('[data-keep]').forEach((el) => { kept[el.dataset.keep] = el.scrollTop; });
   root.innerHTML = view();
   root.querySelectorAll('[data-keep]').forEach((el) => { if (kept[el.dataset.keep]) el.scrollTop = kept[el.dataset.keep]; });
+  setBarColor();
+}
+
+// 휴대폰 위쪽 상태 표시줄과 아래쪽 버튼 줄 색을 지금 보이는 화면 머리 색에 맞춤
+function setBarColor() {
+  const head = root.querySelector('.sheet-hd') || root.querySelector('.hd');
+  const color = head ? getComputedStyle(head).backgroundColor : '#D9483B';
+  let meta = document.querySelector('meta[name="theme-color"]');
+  if (!meta) { meta = document.createElement('meta'); meta.name = 'theme-color'; document.head.appendChild(meta); }
+  if (meta.content !== color) meta.content = color;
 }
 
 function view() {
