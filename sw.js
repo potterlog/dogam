@@ -1,5 +1,5 @@
 // 앱 화면 파일을 저장해 두어 인터넷이 약해도 빨리 열리게 합니다.
-const CACHE = 'dogam-v3';
+const CACHE = 'dogam-v4';
 const SHELL = ['./', './index.html', './style.css', './app.js', './firebase-config.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 const RUNTIME_HOSTS = ['www.gstatic.com', 'fonts.googleapis.com', 'fonts.gstatic.com'];
 
